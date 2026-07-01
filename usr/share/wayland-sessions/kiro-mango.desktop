@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Kiro Mango
+Comment=mango WM with the Kiro shell (waybar/mako/autostart wired up)
+Exec=kiro-mango-session
+Icon=mango
+Type=Application
+DesktopNames=mango;wlroots

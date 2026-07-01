@@ -19,11 +19,23 @@ Format: one dated entry per day (`YYYY.MM.DD`), newest first.
 - Per this edition's known limitation (no live IPC reload), mango's own border colours from the
   recolor combos still only apply on Super+Shift+R or next login — same caveat as `set-theme.sh`
   always carried; waybar/mako still reload live via the existing SIGUSR2/makoctl signals.
+- **Fixed autostart.sh never actually running.** Found live on picard: no waybar, mako, nm-applet,
+  variety, or hypridle at all after login. Root cause — unlike every other KIROTUX compositor,
+  mango has no in-config exec mechanism; the startup script must be passed via `mango -s
+  <command>` (confirmed via `mango --help`), and upstream `mangowm`'s own `.desktop` session entry
+  just does `Exec=mango` with no `-s` flag. Fixed by shipping this package's own session entry:
+  `usr/bin/kiro-mango-session` (a wrapper — `.desktop` `Exec=` is parsed as a literal argv, so
+  `$HOME` is never expanded, same pattern as `exec-ohmychadwm`/`kiro-dwl-session`) +
+  `usr/share/wayland-sessions/kiro-mango.desktop` (`Name=Kiro Mango`, distinct from upstream's
+  plain `Mango` entry to avoid a file-ownership conflict).
 
 ### Files Modified
 - [etc/skel/.config/mango/config.conf](etc/skel/.config/mango/config.conf)
 - [etc/skel/.config/mango/autostart.sh](etc/skel/.config/mango/autostart.sh)
 - [etc/skel/.config/mango/keybindings.txt](etc/skel/.config/mango/keybindings.txt)
+- [usr/bin/kiro-mango-session](usr/bin/kiro-mango-session) (new)
+- [usr/share/wayland-sessions/kiro-mango.desktop](usr/share/wayland-sessions/kiro-mango.desktop) (new)
+- [CLAUDE.md](CLAUDE.md)
 - [../KIROTUX-PKG-BUILD/kiro-mango/PKGBUILD](../KIROTUX-PKG-BUILD/kiro-mango/PKGBUILD)
 
 ## 2026.06.30
