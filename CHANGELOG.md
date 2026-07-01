@@ -3,6 +3,29 @@
 All notable changes to **kiro-mango** are documented here.
 Format: one dated entry per day (`YYYY.MM.DD`), newest first.
 
+## 2026.07.01
+
+### What Changed
+- **Added Variety wallpaper-rotator autostart + keybinds.** `variety` (configured by
+  `kiro-variety-config`) now autostarts alongside the existing static `swaybg` wallpaper. Ported
+  the ohmychadwm `keybindings.txt` scheme (alt+N/P/T/F/arrows/Up/Down/W): next/previous/trash/
+  favorite/pause/resume/selector, plus alt+shift+N/P/T/F/U combos that also trigger this edition's
+  `set-theme.sh` pywal recolor (waybar/mako/mango border colours). `variety` +
+  `kiro-variety-config` added to `depends=()`.
+
+### Technical Details
+- Verified no existing bare-Alt binds collided with alt+n/p/t/f/w/arrows before adding — `super+N`
+  is already used for "switch layout" but that's a different modifier chord from bare `alt+N`.
+- Per this edition's known limitation (no live IPC reload), mango's own border colours from the
+  recolor combos still only apply on Super+Shift+R or next login — same caveat as `set-theme.sh`
+  always carried; waybar/mako still reload live via the existing SIGUSR2/makoctl signals.
+
+### Files Modified
+- [etc/skel/.config/mango/config.conf](etc/skel/.config/mango/config.conf)
+- [etc/skel/.config/mango/autostart.sh](etc/skel/.config/mango/autostart.sh)
+- [etc/skel/.config/mango/keybindings.txt](etc/skel/.config/mango/keybindings.txt)
+- [../KIROTUX-PKG-BUILD/kiro-mango/PKGBUILD](../KIROTUX-PKG-BUILD/kiro-mango/PKGBUILD)
+
 ## 2026.06.30
 
 ### What Changed

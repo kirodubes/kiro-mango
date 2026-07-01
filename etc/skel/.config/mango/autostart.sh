@@ -25,6 +25,7 @@ xdg-user-dirs-update &
 
 # Wallpaper + pywal theming (palette -> waybar/mako/mango borders).
 swaybg -m fill -i "$HOME/.config/mango/bg/kiro.jpg" &
+variety &
 "$HOME/.config/mango/scripts/set-theme.sh" &
 
 # Bar (GTK_A11Y=none avoids the ~25s at-spi login stall), notifications,
