@@ -1,22 +1,20 @@
 {
-  // Kiro mango bar — same layout/feel as kiro-hyprland. mango has no native
-  // waybar workspace module, so the left side uses wlr/taskbar (running windows);
-  // tags are driven by Super+1..9 / the overview (Super+Tab). style.css + colors.css
-  // come from kiro-wayland-dotfiles (shared).
+  // Kiro mango bar — same layout/feel as kiro-hyprland. mango implements the
+  // ext-workspace-v1 protocol, so tags show via ext/workspaces (like Hyprland's
+  // bar); style.css + colors.css come from kiro-wayland-dotfiles (shared).
   "layer": "top",
   "position": "top",
   "height": 24,
   "spacing": 6,
-  "modules-left": ["wlr/taskbar"],
+  "modules-left": ["ext/workspaces"],
   "modules-center": ["clock"],
   "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery", "tray"],
 
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 16,
-    "tooltip-format": "{title}",
+  "ext/workspaces": {
+    "format": "{id}",
     "on-click": "activate",
-    "on-click-middle": "close"
+    "sort-by-id": true,
+    "all-outputs": true
   },
   "clock": {
     "format": "{:%a %d %b  %H:%M}",
