@@ -1,0 +1,14 @@
+# Re-hide upstream mangowm's plain "Mango" session after any mangowm
+# install/upgrade restores /usr/share/wayland-sessions/mango.desktop.
+# Keeps "Kiro Mango" the only selectable mango entry. See
+# /usr/bin/kiro-mango-hide-upstream-session.
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Path
+Target = usr/share/wayland-sessions/mango.desktop
+
+[Action]
+Description = Hiding upstream Mango session (Kiro Mango is the supported entry)...
+When = PostTransaction
+Exec = /usr/bin/kiro-mango-hide-upstream-session

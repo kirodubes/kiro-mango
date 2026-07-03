@@ -1,0 +1,25 @@
+#!/bin/sh
+#####################################################################
+# Author    : Erik Dubois
+# Website   : https://kiroproject.be
+#####################################################################
+#   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
+#
+# Purpose:
+#   Hide upstream mangowm's plain "Mango" session so only Kiro's own
+#   "Kiro Mango" entry is offered in the display manager. Stamps
+#   NoDisplay=true onto /usr/share/wayland-sessions/mango.desktop
+#   (owned by the mangowm package) when it is not already present.
+# Why:
+#   The bare "Mango" entry runs `mango` with no `-s autostart.sh`, so it
+#   comes up as a black screen with a cursor — working keybinds but no
+#   waybar and no wallpaper. Two near-identical greeter entries is a
+#   footgun; this removes the wrong one. A pacman hook re-runs this after
+#   every mangowm upgrade (which restores the file), so it cannot regress.
+#####################################################################
+
+desktop=/usr/share/wayland-sessions/mango.desktop
+
+[ -f "$desktop" ] || exit 0
+grep -q '^NoDisplay=true$' "$desktop" && exit 0
+printf 'NoDisplay=true\n' >> "$desktop"
