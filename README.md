@@ -32,7 +32,9 @@ sudo pacman -S kiro-mango
 ```
 
 `kiro-mango` depends on `mangowm` (from cachyos) + the shared `kiro-wayland-dotfiles` base + the waybar
-stack. Pick **mango** at the greeter. Workspaces are **tags** (Super+1..9); press **Super+Tab** for the
+stack. Pick **Kiro Mango** at the greeter — **not** plain **Mango** (that's upstream mangowm's own
+session entry, which has no autostart wired up: no waybar, wallpaper or theming). Workspaces are
+**tags** (Super+1..9); press **Super+Tab** for the
 animated overview, **Super+Ctrl+S** for the keybindings cheat sheet.
 
 A pristine copy of the config is kept at `/usr/share/kiro/kiro-mango/`.

@@ -3,6 +3,21 @@
 All notable changes to **kiro-mango** are documented here.
 Format: one dated entry per day (`YYYY.MM.DD`), newest first.
 
+## 2026.07.09
+
+### Fix README greeter instruction (pointed at the broken session entry)
+
+**What Changed**
+- The install section told users to "Pick **mango** at the greeter" — that is
+  upstream mangowm's own `Mango` session, which has **no autostart wired up**
+  (black screen: no waybar/wallpaper/theming). Corrected to **Kiro Mango**, the
+  session this package ships (`Name=Kiro Mango`), with a note warning off the
+  plain `Mango` entry — matching the CLAUDE.md/CHANGELOG guidance that already
+  documented this failure mode.
+
+**Files Modified**
+- `README.md`
+
 ## 2026.07.07
 
 ### Keyboard: US default + Alt+Shift layout toggle
