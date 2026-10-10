@@ -48,5 +48,5 @@ line (sibling to [kiro-hyprland](../kiro-hyprland/CLAUDE.md)). Public, open-core
   independently re-verified.
 
 ## Build / delivery
-- Public recipe `../KIROTUX-PKG-BUILD/kiro-mango/build.sh` → `~/EDU/nemesis_repo/`. After editing here:
-  rebuild the package, then the ISO. See [../CLAUDE.md](../CLAUDE.md) for the delivery architecture.
+- Public recipe `~/KIRO-PKG-BUILD-APPS/kiro-mango/build.sh` → `~/EDU/nemesis_repo/`. After editing here:
+  rebuild the package, then the ISO. See [KIROTUX/CLAUDE.md](../../KIROTUX/CLAUDE.md) for the delivery architecture.

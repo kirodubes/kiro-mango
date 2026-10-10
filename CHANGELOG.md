@@ -3,6 +3,14 @@
 All notable changes to **kiro-mango** are documented here.
 Format: one dated entry per day (`YYYY.MM.DD`), newest first.
 
+## 2026.10.10
+
+### What Changed
+- Source repo moved from `~/KIROTUX/kiro-mango` to `~/KIRO/kiro-mango` and its recipe to `~/KIRO-PKG-BUILD-APPS/kiro-mango`: ATT installs it from nemesis_repo, so it is a Kiro package, not KiroTux-only. Paths and links in the docs follow. The package itself is unchanged.
+
+### Files Modified
+- `CLAUDE.md`, `CHANGELOG.md`
+
 ## 2026.09.05
 
 ### What Changed
