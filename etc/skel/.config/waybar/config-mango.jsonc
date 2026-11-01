@@ -17,7 +17,7 @@
     "all-outputs": true
   },
   "clock": {
-    "format": "{:%a %d %b  %H:%M}",
+    "format": "{:L%a %d %b  %H:%M}",
     "tooltip-format": "<tt>{calendar}</tt>"
   },
   "pulseaudio": {
